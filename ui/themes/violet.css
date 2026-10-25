@@ -1,0 +1,30 @@
+/* @theme name="Фиолетовая ночь" author="DotaCat" */
+/* @layout card-style="classic" sidebar="left" glow="1" anim="1" */
+
+:root {
+  --font: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --font-size: 14px;
+  --bg: #0d0a14;
+  --panel: #141020;
+  --card: #1a1527;
+  --card-2: #221b33;
+  --input: #110d1b;
+  --border: #2b2340;
+  --text: #ede8f7;
+  --text-2: #b6accc;
+  --muted: #7e7498;
+  --accent: #9d4edd;
+  --accent-2: #ff5fd2;
+  --accent-text: #ffffff;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #fb7185;
+  --radius: 14px;
+  --gap: 14px;
+  --card-min: 220px;
+  --sidebar-w: 256px;
+  --panel-alpha: 0.88;
+  --card-alpha: 1;
+  --glass-blur: 0px;
+  --preview-ratio: 16 / 10;
+}

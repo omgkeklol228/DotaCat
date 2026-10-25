@@ -1,0 +1,34 @@
+/* @theme name="Светлая" author="DotaCat" */
+/* @layout card-style="classic" sidebar="left" glow="1" anim="1" */
+
+:root {
+  color-scheme: light;
+  --font: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --font-size: 14px;
+  --bg: #f3f1f9;
+  --panel: #ffffff;
+  --card: #ffffff;
+  --card-2: #efecf7;
+  --input: #faf9fe;
+  --border: #e1dcee;
+  --text: #1d1730;
+  --text-2: #4b4364;
+  --muted: #8a83a1;
+  --accent: #7c3aed;
+  --accent-2: #db2777;
+  --accent-text: #ffffff;
+  --success: #059669;
+  --warning: #d97706;
+  --danger: #e11d48;
+  --terminal-bg: #18141f;
+  --terminal-text: #e7e3ef;
+  --radius: 14px;
+  --gap: 14px;
+  --card-min: 220px;
+  --sidebar-w: 256px;
+  --panel-alpha: 0.92;
+  --card-alpha: 1;
+  --glass-blur: 0px;
+  --preview-ratio: 16 / 10;
+  --shadow: 0 12px 30px rgba(40, 20, 80, 0.12);
+}

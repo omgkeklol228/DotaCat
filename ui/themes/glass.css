@@ -1,0 +1,36 @@
+/* @theme name="Стекло" author="DotaCat" */
+/* @layout card-style="overlay" sidebar="left" glow="1" anim="1" */
+
+/* Полупрозрачные панели поверх яркого градиента */
+:root {
+  --font: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  --font-size: 14px;
+  --bg: #070b1a;
+  --panel: #10172e;
+  --card: #18213f;
+  --card-2: #1f2a4d;
+  --input: #0c1226;
+  --border: #2a3762;
+  --text: #eef2ff;
+  --text-2: #b9c3e6;
+  --muted: #8090c0;
+  --accent: #5b8cff;
+  --accent-2: #22d3ee;
+  --accent-text: #ffffff;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #fb7185;
+  --radius: 18px;
+  --gap: 16px;
+  --card-min: 220px;
+  --sidebar-w: 260px;
+  --panel-alpha: 0.55;
+  --card-alpha: 0.6;
+  --glass-blur: 18px;
+  --preview-ratio: 16 / 10;
+  --bg-gradient:
+    radial-gradient(900px 600px at 10% 10%, rgba(91, 140, 255, 0.45), transparent 60%),
+    radial-gradient(800px 600px at 90% 20%, rgba(34, 211, 238, 0.32), transparent 60%),
+    radial-gradient(900px 700px at 60% 110%, rgba(168, 85, 247, 0.38), transparent 60%),
+    #070b1a;
+}

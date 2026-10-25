@@ -1,0 +1,34 @@
+/* @theme name="Minify" author="DotaCat" */
+/* @layout card-style="classic" sidebar="left" glow="0" anim="0" */
+
+/* Цвета в стиле тёмной темы Minify */
+:root {
+  --font: system-ui, "Segoe UI", sans-serif;
+  --font-size: 14px;
+  --bg: #121212;
+  --panel: #1a1a1a;
+  --card: #181818;
+  --card-2: #242424;
+  --input: #1a1a1a;
+  --border: #333333;
+  --text: #e0e0e0;
+  --text-2: #aaaaaa;
+  --muted: #777777;
+  --accent: #17bebe;
+  --accent-2: #12a5a5;
+  --accent-text: #000000;
+  --success: #3ddc84;
+  --warning: #ffb86c;
+  --danger: #ff5555;
+  --terminal-bg: #0c0d0e;
+  --terminal-text: #d4d4d4;
+  --radius: 8px;
+  --gap: 12px;
+  --card-min: 210px;
+  --sidebar-w: 240px;
+  --panel-alpha: 1;
+  --card-alpha: 1;
+  --glass-blur: 0px;
+  --preview-ratio: 16 / 9;
+  --bg-gradient: var(--bg);
+}

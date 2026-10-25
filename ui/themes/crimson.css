@@ -1,0 +1,33 @@
+/* @theme name="Dota Red" author="DotaCat" */
+/* @layout card-style="overlay" sidebar="left" glow="1" anim="1" */
+
+:root {
+  --font: "Trebuchet MS", "Segoe UI", sans-serif;
+  --font-size: 14px;
+  --bg: #0a0a0c;
+  --panel: #121215;
+  --card: #17171b;
+  --card-2: #212126;
+  --input: #0f0f12;
+  --border: #2a2a31;
+  --text: #f3efe6;
+  --text-2: #bdb6a8;
+  --muted: #7f786c;
+  --accent: #d6322b;
+  --accent-2: #f2a93b;
+  --accent-text: #ffffff;
+  --success: #6fcf6b;
+  --warning: #f2a93b;
+  --danger: #ff5a4f;
+  --radius: 6px;
+  --gap: 12px;
+  --card-min: 210px;
+  --sidebar-w: 250px;
+  --panel-alpha: 0.9;
+  --card-alpha: 1;
+  --glass-blur: 0px;
+  --preview-ratio: 16 / 10;
+  --bg-gradient:
+    radial-gradient(1000px 520px at 50% -20%, rgba(214, 50, 43, 0.22), transparent 65%),
+    linear-gradient(180deg, #0f0b0b, #0a0a0c 40%);
+}
