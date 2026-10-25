@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru" data-card-style="classic" data-sidebar="left" data-glow="1" data-anim="1">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DotaCat</title>
+  <link rel="icon" href="img/icon.svg" type="image/svg+xml">
+  <!-- 1. Базовая разметка: использует только CSS-переменные -->
+  <link rel="stylesheet" href="css/base.css">
+  <!-- 2. Тема: значения переменных (папка themes/, можно добавлять свои .css) -->
+  <link rel="stylesheet" id="theme-link" href="themes/violet.css">
+  <!-- 3. Правки из вкладки «Дизайн» -->
+  <style id="theme-overrides"></style>
+  <!-- 4. Свой CSS (файл ui/custom.css) — подключается последним и перекрывает всё -->
+  <style id="custom-style"></style>
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true"></div>
+
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo"><i class="logo-cat"></i></div>
+        <div class="brand-text"><b>DotaCat</b><small>моды для Dota 2</small></div>
+      </div>
+
+      <nav class="nav" id="nav">
+        <button class="nav-item active" data-view="catalog"><span class="ic-slot" data-icon="grid"></span><span>Каталог</span></button>
+        <button class="nav-item" data-view="installed"><span class="ic-slot" data-icon="box"></span><span>Установленные</span><span class="count" id="count-installed">0</span></button>
+        <button class="nav-item" data-view="packs"><span class="ic-slot" data-icon="gift"></span><span>Паки</span></button>
+        <button class="nav-item" data-view="optimize"><span class="ic-slot" data-icon="gauge"></span><span>Оптимизация</span><span class="count" id="count-tweaks" hidden>0</span></button>
+        <button class="nav-item" data-view="design"><span class="ic-slot" data-icon="palette"></span><span>Дизайн</span></button>
+        <button class="nav-item" data-view="settings"><span class="ic-slot" data-icon="sliders"></span><span>Настройки</span><span class="dot-warn" id="settings-warn" hidden></span></button>
+      </nav>
+
+      <div class="side-title">Категории</div>
+      <div class="cats" id="cats"><div class="cats-loading">Загрузка…</div></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <label class="search">
+          <span class="ic-slot" data-icon="search"></span>
+          <input id="search" class="input" type="search" placeholder="Поиск модов…  by:автор  tag:anime" autocomplete="off">
+        </label>
+        <select id="sort" class="input sort" title="Сортировка">
+          <option value="default">По умолчанию</option>
+          <option value="name">По названию</option>
+          <option value="new">Сначала новые</option>
+        </select>
+        <select id="source-filter" class="input sort" title="Источник модов">
+          <option value="">Все источники</option>
+          <option value="d2pfx">Dota2PornFx</option>
+          <option value="minify">Minify</option>
+          <option value="community">Сообщество Minify</option>
+        </select>
+        <div class="spacer"></div>
+        <button class="btn" id="btn-play" title="Запустить Dota 2 через Steam"><span class="ic-slot" data-icon="play"></span><span>Играть</span></button>
+        <button class="btn primary" id="btn-patch" title="Собрать включённые моды и положить их в игру"><span class="ic-slot" data-icon="bolt"></span><span>Применить моды</span><i class="dirty-dot"></i></button>
+      </header>
+
+      <div class="content" id="content">
+        <!-- Каталог -->
+        <section class="view" data-view="catalog">
+          <div class="view-head">
+            <div>
+              <h1 id="cat-title">Новинки</h1>
+              <p id="cat-sub" class="muted"></p>
+            </div>
+            <div class="head-tools">
+              <button class="chip" id="chip-installed" title="Показать только установленные">Установленные</button>
+              <button class="chip" id="chip-adult" title="Скрывать моды 18+">Скрыть 18+</button>
+              <button class="chip" id="chip-anime" title="Скрывать аниме-моды">Скрыть аниме</button>
+              <div class="seg" id="card-style-seg" title="Вид карточек">
+                <button data-style="classic" title="Классика"><span class="ic-slot" data-icon="grid"></span></button>
+                <button data-style="overlay" title="Картинка"><span class="ic-slot" data-icon="image"></span></button>
+                <button data-style="compact" title="Компактно"><span class="ic-slot" data-icon="dots"></span></button>
+                <button data-style="list" title="Список"><span class="ic-slot" data-icon="list"></span></button>
+              </div>
+            </div>
+          </div>
+          <div class="hero-picker" id="hero-picker" hidden></div>
+          <div class="groups" id="groups"></div>
+          <div class="grid" id="grid"></div>
+          <div class="sentinel" id="sentinel"></div>
+          <div class="empty" id="empty" hidden></div>
+        </section>
+
+        <!-- Установленные -->
+        <section class="view" data-view="installed" hidden>
+          <div class="view-head">
+            <div>
+              <h1>Установленные моды</h1>
+              <p class="muted">Порядок = приоритет: мод выше в списке перекрывает файлы модов ниже. Перетаскивайте строки мышкой.</p>
+            </div>
+            <div class="head-tools">
+              <button class="btn sm primary" id="btn-check"><span class="ic-slot" data-icon="search"></span><span>Проверить совпадения</span></button>
+              <button class="btn sm" id="btn-update-all" hidden><span class="ic-slot" data-icon="refresh"></span><span>Обновить все</span></button>
+              <button class="btn sm" id="btn-import"><span class="ic-slot" data-icon="upload"></span><span>Добавить свой .vpk/.zip</span></button>
+              <button class="btn sm ghost" data-open="mods"><span class="ic-slot" data-icon="folder"></span><span>Папка модов</span></button>
+            </div>
+          </div>
+          <div class="inst-list" id="inst-list"></div>
+          <input type="file" id="import-file" accept=".vpk,.zip" multiple hidden>
+        </section>
+
+        <!-- Паки -->
+        <section class="view" data-view="packs" hidden>
+          <div class="view-head">
+            <div>
+              <h1>Паки</h1>
+              <p class="muted">Готовые наборы модов с сайта — ставятся одной кнопкой.</p>
+            </div>
+          </div>
+          <div class="grid packs" id="packs"></div>
+        </section>
+
+        <!-- Оптимизация -->
+        <section class="view" data-view="optimize" hidden>
+          <div class="view-head">
+            <div>
+              <h1>Оптимизация</h1>
+              <p class="muted">Всё, что реально поднимает FPS в Dota 2: облегчённые эффекты, параметры запуска, графика и настройки Windows.</p>
+            </div>
+          </div>
+          <div id="optimize"></div>
+        </section>
+
+        <!-- Дизайн -->
+        <section class="view" data-view="design" hidden>
+          <div class="view-head">
+            <div>
+              <h1>Дизайн</h1>
+              <p class="muted">Темы, цвета, форма карточек, фон и свой CSS. Всё применяется сразу.</p>
+            </div>
+            <div class="head-tools">
+              <button class="btn sm ghost" data-open="themes"><span class="ic-slot" data-icon="folder"></span><span>Папка тем</span></button>
+              <button class="btn sm ghost" data-open="ui"><span class="ic-slot" data-icon="code"></span><span>Файлы интерфейса</span></button>
+            </div>
+          </div>
+          <div id="design"></div>
+        </section>
+
+        <!-- Настройки -->
+        <section class="view" data-view="settings" hidden>
+          <div class="view-head">
+            <div>
+              <h1>Настройки</h1>
+              <p class="muted">Пути к игре, язык, параметры запуска и каталог.</p>
+            </div>
+          </div>
+          <div id="settings"></div>
+        </section>
+      </div>
+
+      <footer class="statusbar">
+        <div class="task">
+          <div class="progress" id="progress" hidden><i></i></div>
+          <span id="task-text" class="task-text">Готово</span>
+        </div>
+        <div class="spacer"></div>
+        <span id="patch-state" class="patch-state"></span>
+        <button class="btn sm ghost" id="btn-log"><span class="ic-slot" data-icon="terminal"></span><span>Журнал</span></button>
+      </footer>
+    </main>
+  </div>
+
+  <div class="log-panel" id="log-panel" hidden>
+    <div class="log-head">
+      <b>Журнал</b>
+      <div class="row">
+        <button class="btn sm ghost" id="log-clear">Очистить</button>
+        <button class="btn sm ghost icon-btn" id="log-close" title="Закрыть"><span class="ic-slot" data-icon="x"></span></button>
+      </div>
+    </div>
+    <div class="log-body" id="log-body"></div>
+  </div>
+
+  <div class="modal-root" id="modal-root" hidden></div>
+  <div class="toasts" id="toasts"></div>
+
+  <script src="js/icons.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
