@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 120" width="1000" height="120" font-family="'Segoe UI Variable Display','Segoe UI','Inter','Helvetica Neue',Arial,sans-serif">
+  <title>Важно</title>
+  <defs>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9d4edd"/><stop offset="1" stop-color="#ff5fd2"/></linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9d4edd"/><stop offset="0.6" stop-color="#ff5fd2"/><stop offset="1" stop-color="#ff5fd2" stop-opacity="0"/></linearGradient>
+    <linearGradient id="num" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff5fd2" stop-opacity="0.38"/><stop offset="1" stop-color="#9d4edd" stop-opacity="0.08"/></linearGradient>
+    <radialGradient id="glow" cx="0.06" cy="0.2" r="0.45"><stop offset="0" stop-color="#9d4edd" stop-opacity="0.35"/><stop offset="1" stop-color="#9d4edd" stop-opacity="0"/></radialGradient>
+    <clipPath id="clip"><rect width="1000" height="120" rx="20"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="1000" height="120" fill="#141020"/>
+    <rect width="1000" height="120" fill="url(#glow)"/>
+    <text x="972" y="98" text-anchor="end" font-size="96" font-weight="800" fill="url(#num)">07</text>
+    <rect y="116" width="1000" height="4" fill="url(#line)"/>
+  </g>
+  <rect x="1" y="1" width="998" height="118" rx="19" fill="none" stroke="#2b2340" stroke-width="2"/>
+  <rect x="28" y="26" width="64" height="64" rx="18" fill="url(#acc)"/>
+  <rect x="28" y="26" width="64" height="30" rx="18" fill="#fff" opacity="0.10"/>
+  <g transform="translate(42 40) scale(1.5)" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></g>
+  <text x="116" y="62" font-size="34" font-weight="800" fill="#f3eefc">Важно</text>
+  <text x="117" y="92" font-size="18" fill="#b6accc">Риски, авторы модов и условия каталога</text>
+</svg>

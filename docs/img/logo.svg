@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>DotaCat</title>
+  <defs>
+    <linearGradient id="accL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9d4edd"/><stop offset="1" stop-color="#ff5fd2"/></linearGradient>
+    <linearGradient id="eyeL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4fd"/><stop offset="1" stop-color="#ffb3ec"/></linearGradient>
+    <filter id="blurL" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="7"/></filter></defs>
+  
+  <g transform="translate(0 0) scale(1.0000)">
+    <rect x="8" y="8" width="240" height="240" rx="58" fill="url(#accL)"/>
+    <rect x="8" y="8" width="240" height="118" rx="58" fill="#fff" opacity="0.10"/>
+    <g fill="#0d0a14" stroke="#0d0a14"><ellipse cx="128" cy="154" rx="84" ry="68"/><polygon points="48,136 62,38 118,92" stroke-width="6" stroke-linejoin="round"/><polygon points="208,136 194,38 138,92" stroke-width="6" stroke-linejoin="round"/></g>
+    <polygon points="70,112 70,64 104,94" fill="url(#accL)" opacity="0.6"/>
+    <polygon points="186,112 186,64 152,94" fill="url(#accL)" opacity="0.6"/>
+    <g filter="url(#blurL)" opacity="0.85"><ellipse cx="94" cy="148" rx="24" ry="13" fill="#ff5fd2"/><ellipse cx="162" cy="148" rx="24" ry="13" fill="#ff5fd2"/></g>
+    <polygon points="70.7,142.2 73.2,140.6 75.6,139.2 78.0,137.9 80.3,136.9 82.6,136.0 84.8,135.3 87.0,134.8 89.1,134.4 91.2,134.3 93.3,134.3 95.3,134.5 97.3,134.9 99.2,135.5 101.1,136.2 102.9,137.2 104.7,138.3 106.4,139.6 108.1,141.1 109.7,142.7 111.3,144.6 112.9,146.6 114.4,148.8 115.9,151.2 117.3,153.8 114.9,155.0 112.6,156.0 110.3,156.9 108.1,157.7 105.9,158.3 103.7,158.8 101.5,159.1 99.4,159.3 97.4,159.3 95.3,159.2 93.3,158.9 91.4,158.5 89.5,157.9 87.6,157.2 85.7,156.4 83.9,155.4 82.1,154.2 80.4,153.0 78.7,151.5 77.0,150.0 75.4,148.2 73.8,146.4 72.2,144.4" fill="url(#eyeL)"/>
+    <polygon points="138.7,153.8 140.1,151.2 141.6,148.8 143.1,146.6 144.7,144.6 146.3,142.7 147.9,141.1 149.6,139.6 151.3,138.3 153.1,137.2 154.9,136.2 156.8,135.5 158.7,134.9 160.7,134.5 162.7,134.3 164.8,134.3 166.9,134.4 169.0,134.8 171.2,135.3 173.4,136.0 175.7,136.9 178.0,137.9 180.4,139.2 182.8,140.6 185.3,142.2 183.8,144.4 182.2,146.4 180.6,148.2 179.0,150.0 177.3,151.5 175.6,153.0 173.9,154.2 172.1,155.4 170.3,156.4 168.4,157.2 166.5,157.9 164.6,158.5 162.7,158.9 160.7,159.2 158.6,159.3 156.6,159.3 154.5,159.1 152.3,158.8 150.1,158.3 147.9,157.7 145.7,156.9 143.4,156.0 141.1,155.0" fill="url(#eyeL)"/>
+    <ellipse cx="94" cy="148" rx="4.6" ry="11.5" fill="#0d0a14" transform="rotate(4.7 94 148)"/>
+    <ellipse cx="162" cy="148" rx="4.6" ry="11.5" fill="#0d0a14" transform="rotate(-4.7 162 148)"/>
+  </g>
+</svg>
