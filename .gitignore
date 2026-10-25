@@ -1,4 +1,11 @@
 # Личные данные и настройки DotaCat (создаются при запуске)
 data/
 ui/.backup-*/
+ui/.dotacat-files.json
 ui/user/
+
+# Мусор сборки и Python
+build/
+dist/
+__pycache__/
+*.pyc
